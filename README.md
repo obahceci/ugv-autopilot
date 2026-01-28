@@ -3,7 +3,7 @@ https://github.com/ArduPilot/ardupilot_gazebo/
 
 **1- Gerekli bağımlılıkların kurulumu**
 
-#*Bu aşamada eksik olmaması için yukarıda verilen sitedeki verilen bağımlılıkların yüklenmesi için olan yönergeyi takip et*
+#*Bu aşamada eksik olmaması için yukarıdaki bağlantıda verilen bağımlılıkların yüklenmesi için olan yönergeyi takip et*
 
 `sudo apt-get update`
 
