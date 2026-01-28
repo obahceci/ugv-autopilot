@@ -29,3 +29,12 @@ $ make -j4
 1-  Ortam değişkenlerini tanıtmak (bu kod ~/.bashrc dosyasının içine yazılırsa kalıcı olur)
 
 $ export GZ_SIM_SYSTEM_PLUGIN_PATH=$HOME/ardupilot_gazebo/build:$GZ_SIM_SYSTEM_PLUGIN_PATH
+
+
+
+
+--ÖNEMLİ NOTLAR : 
+
+"~/ardupilot_gazebo/models/teknofest_rover/"  adresinde aracımızın model dosyaları bulunmaktadır
+
+"~/ardupilot_gazebo/worlds/" adresinde teknofest parkurunun model dosyaları bulunur. Bu dosyalar teknofest parkurunun modellenmiş halidir.
