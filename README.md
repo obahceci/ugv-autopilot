@@ -3,6 +3,8 @@ https://github.com/ArduPilot/ardupilot_gazebo/
 
 **1- Gerekli bağımlılıkların kurulumu**
 
+#*Bu aşamada eksik olmamamsı için yukarıda verilen sitedeki verilen bağımlılıkların yüklenmesi için olan yönergeyi takip et*
+
 `sudo apt-get update`
 
 `sudo apt-get install python3-gz-sim8` 
