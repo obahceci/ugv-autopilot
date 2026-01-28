@@ -4,23 +4,54 @@
     <static>true</static>
     <link name="link">
       
-      <collision name="c_ground">
+      <collision name="c_ground_plane">
+        <pose>0 0 -0.05 0 0 0</pose>
         <geometry>
           <box>
             <size>200 200 0.1</size>
           </box>
         </geometry>
+        <surface>
+          <friction>
+            <ode><mu>100</mu><mu2>50</mu2></ode>
+          </friction>
+        </surface>
       </collision>
 
-      <visual name="v_ground">
-        <geometry>
-          <box>
-            <size>200 200 0.1</size>
-          </box>
-        </geometry>
-        <material>
-          <ambient>0.5 0.5 0.5 1</ambient> <diffuse>0.5 0.5 0.5 1</diffuse>
-        </material>
+      <visual name="v_zemin">
+        <geometry><mesh><uri>model://teknofest_parkur/meshes/zemin.dae</uri></mesh></geometry>
+      </visual>
+
+      <visual name="v_yol">
+        <geometry><mesh><uri>model://teknofest_parkur/meshes/yol.dae</uri></mesh></geometry>
+      </visual>
+
+      <visual name="v_cizgiler">
+        <geometry><mesh><uri>model://teknofest_parkur/meshes/cizgiler.dae</uri></mesh></geometry>
+      </visual>
+
+      <visual name="v_bariyer">
+        <geometry><mesh><uri>model://teknofest_parkur/meshes/bariyer.dae</uri></mesh></geometry>
+      </visual>
+
+      <visual name="v_kukalar">
+        <geometry><mesh><uri>model://teknofest_parkur/meshes/kukalar.dae</uri></mesh></geometry>
+      </visual>
+
+      <visual name="v_dik_egim">
+        <geometry><mesh><uri>model://teknofest_parkur/meshes/dik_egim.dae</uri></mesh></geometry>
+      </visual>
+
+      <visual name="v_yan_egim">
+        <geometry><mesh><uri>model://teknofest_parkur/meshes/yan_egim.dae</uri></mesh></geometry>
+      </visual>
+
+      <visual name="v_sudan_gecis">
+        <geometry><mesh><uri>model://teknofest_parkur/meshes/sudan_gecis.dae</uri></mesh></geometry>
+      </visual>
+
+      <visual name="v_tabelalar">
+        <geometry><mesh><uri>model://teknofest_parkur/meshes/tabelalar.dae</uri></mesh></geometry>
       </visual>
 
     </link>
