@@ -34,7 +34,7 @@
 
 `pkill -9 ruby`
 
-#EKLENTİ YOLUNU TANIT 
+#*ortam değişkenlerini tanıt*
 
 `export GZ_SIM_RESOURCE_PATH=$GZ_SIM_RESOURCE_PATH:$HOME/ardupilot_gazebo/models:$HOME/ardupilot_gazebo/worlds`
 
