@@ -9,20 +9,17 @@
 
 **2- Ardupilot gazebo eklentisi indirmek**
 
-  $ git clone https://github.com/ArduPilot/ardupilot_gazebo
-
-  $ cd ardupilot_gazebo
+`git clone https://github.com/ArduPilot/ardupilot_gazebo`
+`cd ardupilot_gazebo`
 
 
 **3- İlk derlemeyi yapmak** 
 
-  $ mkdir build && cd build
+`mkdir build && cd build`
 
-
-  $ cmake ..
-
-
-  $ make -j4
+`cmake ..`
+    
+`make -j4`
 
 
 
@@ -32,14 +29,14 @@
 
 #Eğer gazebo güncel olan dünyayı açamıyorsa öncekşi gazebo fonksiyonlarını kapat.
 
-$ pkill -9 gz
-$ pkill -9 ruby
+`pkill -9 gz`
+`pkill -9 ruby`
 
 #EKLENTİ YOLUNU TANIT 
 
-$ export GZ_SIM_RESOURCE_PATH=$GZ_SIM_RESOURCE_PATH:$HOME/ardupilot_gazebo/models:$HOME/ardupilot_gazebo/worlds
+`export GZ_SIM_RESOURCE_PATH=$GZ_SIM_RESOURCE_PATH:$HOME/ardupilot_gazebo/models:$HOME/ardupilot_gazebo/worlds`
 
-$ gz sim -v4 teknofest_final.sdf    #aktif model dünyasını çalıştırır
+`gz sim -v4 teknofest_final.sdf`    #aktif model dünyasını çalıştırır
 
 
 
