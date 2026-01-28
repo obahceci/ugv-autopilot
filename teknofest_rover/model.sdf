@@ -1,0 +1,132 @@
+<?xml version="1.0" ?>
+<sdf version="1.8">
+  <model name='teknofest_rover'>
+    <pose>0 0 0.2 0 0 0</pose>
+
+    <link name='base_link'>
+      <inertial>
+        <mass>15.0</mass>
+        <inertia>
+          <ixx>0.4</ixx><iyy>0.7</iyy><izz>0.4</izz>
+        </inertia>
+      </inertial>
+      <collision name='collision'>
+        <geometry><box><size>0.6 0.4 0.15</size></box></geometry>
+      </collision>
+      <visual name='visual'>
+        <geometry><box><size>0.6 0.4 0.15</size></box></geometry>
+        <material><ambient>0.1 0.1 0.1 1</ambient><diffuse>0.2 0.2 0.2 1</diffuse></material>
+      </visual>
+    </link>
+
+    <link name='front_left_wheel'>
+      <pose>0.22 0.23 -0.05 1.5707 0 0</pose>
+      <collision name='collision'>
+        <geometry><cylinder><radius>0.12</radius><length>0.08</length></cylinder></geometry>
+      </collision>
+      <visual name='visual'>
+        <geometry><cylinder><radius>0.12</radius><length>0.08</length></cylinder></geometry>
+        <material><ambient>0 0 0 1</ambient><diffuse>0 0 0 1</diffuse></material>
+      </visual>
+    </link>
+
+    <link name='front_right_wheel'>
+      <pose>0.22 -0.23 -0.05 1.5707 0 0</pose>
+      <collision name='collision'>
+        <geometry><cylinder><radius>0.12</radius><length>0.08</length></cylinder></geometry>
+      </collision>
+      <visual name='visual'>
+        <geometry><cylinder><radius>0.12</radius><length>0.08</length></cylinder></geometry>
+        <material><ambient>0 0 0 1</ambient><diffuse>0 0 0 1</diffuse></material>
+      </visual>
+    </link>
+
+    <link name='rear_left_wheel'>
+      <pose>-0.22 0.23 -0.05 1.5707 0 0</pose>
+      <collision name='collision'>
+        <geometry><cylinder><radius>0.12</radius><length>0.08</length></cylinder></geometry>
+      </collision>
+      <visual name='visual'>
+        <geometry><cylinder><radius>0.12</radius><length>0.08</length></cylinder></geometry>
+        <material><ambient>0 0 0 1</ambient><diffuse>0 0 0 1</diffuse></material>
+      </visual>
+    </link>
+
+    <link name='rear_right_wheel'>
+      <pose>-0.22 -0.23 -0.05 1.5707 0 0</pose>
+      <collision name='collision'>
+        <geometry><cylinder><radius>0.12</radius><length>0.08</length></cylinder></geometry>
+      </collision>
+      <visual name='visual'>
+        <geometry><cylinder><radius>0.12</radius><length>0.08</length></cylinder></geometry>
+        <material><ambient>0 0 0 1</ambient><diffuse>0 0 0 1</diffuse></material>
+      </visual>
+    </link>
+
+    <joint name='front_left_wheel_joint' type='revolute'>
+      <parent>base_link</parent><child>front_left_wheel</child>
+      <axis><xyz>0 0 1</xyz></axis>
+    </joint>
+    <joint name='front_right_wheel_joint' type='revolute'>
+      <parent>base_link</parent><child>front_right_wheel</child>
+      <axis><xyz>0 0 1</xyz></axis>
+    </joint>
+    <joint name='rear_left_wheel_joint' type='revolute'>
+      <parent>base_link</parent><child>rear_left_wheel</child>
+      <axis><xyz>0 0 1</xyz></axis>
+    </joint>
+    <joint name='rear_right_wheel_joint' type='revolute'>
+      <parent>base_link</parent><child>rear_right_wheel</child>
+      <axis><xyz>0 0 1</xyz></axis>
+    </joint>
+
+    <link name="lidar_link">
+      <pose>0.25 0 0.1 0 0 0</pose>
+      <sensor name='gpu_lidar' type='gpu_lidar'>
+        <topic>scan</topic>
+        <update_rate>10</update_rate>
+        <lidar>
+          <scan>
+            <horizontal>
+              <samples>640</samples>
+              <resolution>1</resolution>
+              <min_angle>-3.14</min_angle>
+              <max_angle>3.14</max_angle>
+            </horizontal>
+          </scan>
+          <range><min>0.15</min><max>12.0</max></range>
+        </lidar>
+      </sensor>
+    </link>
+
+    <plugin name="ArduPilotPlugin" filename="libArduPilotPlugin.so">
+      <fdm_addr>127.0.0.1</fdm_addr>
+      <fdm_port_in>9002</fdm_port_in>
+      <connectionTimeoutMaxCount>5</connectionTimeoutMaxCount>
+      <modelXYZToRunwayXYZ>0 0 0 0 0 0</modelXYZToRunwayXYZ>
+      <gazeboXYZToNED>0 0 0 3.141593 0 0</gazeboXYZToNED>
+      
+      <control channel="0">
+        <jointName>front_left_wheel_joint</jointName>
+        <useServo>1</useServo>
+        <multiplier>50</multiplier>
+      </control>
+      <control channel="0">
+        <jointName>rear_left_wheel_joint</jointName>
+        <useServo>1</useServo>
+        <multiplier>50</multiplier>
+      </control>
+
+      <control channel="2">
+        <jointName>front_right_wheel_joint</jointName>
+        <useServo>1</useServo>
+        <multiplier>50</multiplier>
+      </control>
+      <control channel="2">
+        <jointName>rear_right_wheel_joint</jointName>
+        <useServo>1</useServo>
+        <multiplier>50</multiplier>
+      </control>
+    </plugin>
+  </model>
+</sdf>
