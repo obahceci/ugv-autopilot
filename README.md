@@ -45,6 +45,11 @@
 
 # ÖNEMLİ NOTLAR : 
 
-"~/ardupilot_gazebo/models/teknofest_rover/"  adresinde aracımızın model dosyaları bulunmaktadır
+1- **~/ardupilot_gazebo/models/teknofest_rover/** <br/>
+#*Bu adreste aracımızın model dosyaları bulunmaktadır*
 
-"~/ardupilot_gazebo/worlds/" adresinde teknofest parkurunun model dosyaları bulunur. Bu dosyalar teknofest parkurunun modellenmiş halidir.
+2- **~/ardupilot_gazebo/models/teknofest_parkur/**<br>/
+#*Bu adreste teknofest parkurunun içeriğinde bulununan ortam elemanlarının çizim dosyaları(.dae) ve model dosyası (.sdf) bulunuyor*
+
+3- **~/ardupilot_gazebo/worlds/**<br/>
+#*Adresinde gazeboda çalıştırılacak olan dünyamız bulunmaktadır. Bu dosya "teknofest_parkur" dosyasının içindeki dosyalarla bütünleşerek bütün simülasyon dünyasını oluşturuyor*
