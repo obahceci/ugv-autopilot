@@ -1,6 +1,6 @@
 # İNSANSIZ KARA ARACI OTOPİLOT REPOSITORY 
 
-Simülasyon Sistemimiz ARDUPILOT SITL - ROS2 - GAZEBO üçlüsünden oluşmaktadır.
+Simülasyon sistemimiz ARDUPILOT SITL - ROS2 - GAZEBO üçlüsünden oluşmaktadır. Bu sistem Ubuntu 22.04 İşletim sistemi üzerinde çalışmaktadır
 
 **1 - ROS2 KURULUM** 
 <br/>https://docs.ros.org/en/humble/index.html  
