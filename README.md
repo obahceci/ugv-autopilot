@@ -15,7 +15,11 @@ $ cd ardupilot_gazebo
 3- İlk derlemeyi yapmak 
 
 $ mkdir build && cd build
+
+
 $ cmake ..
+
+
 $ make -j4
 
 
